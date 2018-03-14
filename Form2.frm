@@ -472,6 +472,7 @@ Private Sub Command3_Click()
 If Text1.Text = "" And Text2.Text = "" And Text3.Text = "" And Combo1 = "" Then
 MsgBox "error"
 Else
+On Error Resume Next
 db
 Adodc2.Recordset.AddNew
 Adodc2.Recordset.Fields("kode_mk") = Text1

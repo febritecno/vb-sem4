@@ -480,7 +480,7 @@ Attribute VB_Exposed = False
 Private Sub Command1_Click()
 mati (True)
 Call control(True, True, False, False, True, True, True, True, True)
-Combo1.SetFocus
+Text1.SetFocus
 kosong
 End Sub
 
@@ -559,10 +559,18 @@ End Sub
 Private Sub DataGrid1_Click()
 isi
 mati (False)
+cek
 hapus_list
 Call Form_Load
 End Sub
-
+Sub cek()
+If Adodc3.Recordset.EOF Or Adodc3.Recordset.EOF Then
+MsgBox "error"
+Else
+Combo1.Text = Adodc3.Recordset.Fields!kode_dosen
+Combo2.Text = Adodc3.Recordset.Fields!kode_mk
+End If
+End Sub
 Sub hapus_list()
 Combo1.Clear
 Combo1.Text = "Pilih Kode Dosen Pengajar"
