@@ -2,21 +2,21 @@ VERSION 5.00
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "msdatgrd.ocx"
 Begin VB.Form Form1 
-   BackColor       =   &H80000011&
+   BackColor       =   &H00808080&
    Caption         =   "ENTRY DATA DOSEN"
-   ClientHeight    =   7875
+   ClientHeight    =   7950
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   15360
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
-   ScaleHeight     =   7875
+   ScaleHeight     =   7950
    ScaleWidth      =   15360
    WindowState     =   2  'Maximized
    Begin MSDataGridLib.DataGrid DataGrid1 
       Bindings        =   "Form1.frx":0000
       Height          =   2895
-      Left            =   2760
+      Left            =   3120
       TabIndex        =   12
       Top             =   4920
       Width           =   8415
@@ -100,7 +100,7 @@ Begin VB.Form Form1
    Begin MSAdodcLib.Adodc Adodc1 
       Height          =   375
       Left            =   2760
-      Top             =   4440
+      Top             =   19440
       Width           =   1200
       _ExtentX        =   2117
       _ExtentY        =   661
@@ -252,15 +252,37 @@ Begin VB.Form Form1
       Width           =   4335
    End
    Begin VB.Label Label4 
-      Caption         =   "No HP"
-      Height          =   255
+      BackStyle       =   0  'Transparent
+      Caption         =   "NO HP"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
       Left            =   3480
       TabIndex        =   6
       Top             =   2880
       Width           =   1935
    End
    Begin VB.Label Label3 
-      Caption         =   "Nama Dosen"
+      BackStyle       =   0  'Transparent
+      Caption         =   "NAMA DOSEN"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   3480
       TabIndex        =   5
@@ -268,7 +290,20 @@ Begin VB.Form Form1
       Width           =   1935
    End
    Begin VB.Label Label2 
-      Caption         =   "Kode"
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
+      Caption         =   "KODE DOSEN"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   3480
       TabIndex        =   4
@@ -276,12 +311,24 @@ Begin VB.Form Form1
       Width           =   1935
    End
    Begin VB.Label Label1 
+      Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
       Caption         =   "ENTRY DATA DOSEN"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   17.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0080FF80&
       Height          =   495
-      Left            =   3720
+      Left            =   3600
       TabIndex        =   0
-      Top             =   240
-      Width           =   1935
+      Top             =   720
+      Width           =   6735
    End
 End
 Attribute VB_Name = "Form1"
@@ -305,10 +352,8 @@ Else
 If Text1 = "" And Text2 = "" And Text3 = "" Then
     MsgBox "Masih ada data yang kosong..!!!", vbCritical, "Error!"
         Else
-           If Adodc2.Recordset.BOF Or Adodc1.Recordset.EOF Then
-        MsgBox "error"
-        Else
 db
+a
 With Adodc1.Recordset
     !kode_dosen = Text1
     !nama_dosen = Text2
@@ -317,7 +362,6 @@ With Adodc1.Recordset
 End With
 Call control(False, False, False, True, True, False, True, True)
 Command2.Caption = "Edit"
-    End If
     End If
 End If
 
@@ -328,6 +372,7 @@ If Text1.Text = "" And Text2.Text = "" And Text3.Text = "" Then
 MsgBox "error"
 Else
 db
+a
 Adodc1.Recordset.AddNew
 Adodc1.Recordset.Fields("kode_dosen") = Text1
 Adodc1.Recordset.Fields("nama_dosen") = Text2
@@ -343,6 +388,7 @@ End Sub
 Private Sub Command4_Click()
 Dim hapus As String
 db
+ a
     If Adodc1.Recordset.RecordCount <> 0 Then
         hapus = MsgBox("Yakin akan dihapus?", vbYesNo, "Peringatan...!")
         If hapus = vbYes Then
@@ -373,19 +419,26 @@ End Sub
 Private Sub DataGrid1_Click()
 isi
 mati (False)
+Call Form_Load
 End Sub
 
 Private Sub DataGrid1_KeyDown(KeyCode As Integer, Shift As Integer)
 isi
 mati (False)
+
+Call Form_Load
 End Sub
 
 Private Sub DataGrid1_KeyUp(KeyCode As Integer, Shift As Integer)
 isi
 mati (False)
+
+Call Form_Load
+
 End Sub
 Private Sub Form_Load()
 isi
+Command2.Caption = "Edit"
 mati (False)
 Call control(False, False, False, True, True, False, True, True)
 End Sub

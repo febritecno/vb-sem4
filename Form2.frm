@@ -4,7 +4,7 @@ Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "msdatgrd.ocx"
 Begin VB.Form Form2 
    Appearance      =   0  'Flat
    BackColor       =   &H00808080&
-   Caption         =   "Form2"
+   Caption         =   "ENTRY DATA MATAKULIAH"
    ClientHeight    =   8610
    ClientLeft      =   120
    ClientTop       =   465
@@ -20,13 +20,14 @@ Begin VB.Form Form2
       Left            =   5640
       List            =   "Form2.frx":0002
       TabIndex        =   14
+      Text            =   "Pilih Kode Dosen Pengajar"
       Top             =   3360
       Width           =   4335
    End
    Begin MSAdodcLib.Adodc Adodc2 
       Height          =   330
       Left            =   2640
-      Top             =   4800
+      Top             =   18600
       Width           =   1200
       _ExtentX        =   2117
       _ExtentY        =   582
@@ -180,7 +181,7 @@ Begin VB.Form Form2
    Begin MSDataGridLib.DataGrid DataGrid1 
       Bindings        =   "Form2.frx":040B
       Height          =   2895
-      Left            =   2640
+      Left            =   2880
       TabIndex        =   3
       Top             =   5280
       Width           =   8415
@@ -280,7 +281,7 @@ Begin VB.Form Form2
    Begin MSAdodcLib.Adodc Adodc1 
       Height          =   975
       Left            =   120
-      Top             =   7080
+      Top             =   20880
       Width           =   1200
       _ExtentX        =   2117
       _ExtentY        =   1720
@@ -324,7 +325,18 @@ Begin VB.Form Form2
       _Version        =   393216
    End
    Begin VB.Label Label5 
-      Caption         =   "Kode Dosen"
+      BackStyle       =   0  'Transparent
+      Caption         =   "KODE DOSEN"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   255
       Left            =   3360
       TabIndex        =   13
@@ -332,35 +344,82 @@ Begin VB.Form Form2
       Width           =   1935
    End
    Begin VB.Label Label1 
+      Alignment       =   2  'Center
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
       Caption         =   "ENTRY DATA MATAKULIAH"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   17.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0080FF80&
       Height          =   495
-      Left            =   4680
+      Left            =   3600
       TabIndex        =   12
       Top             =   480
-      Width           =   3615
+      Width           =   6495
    End
    Begin VB.Label Label2 
-      Caption         =   "Kode"
-      Height          =   375
+      BackStyle       =   0  'Transparent
+      Caption         =   "KODE MATAKULIAH"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   615
       Left            =   3360
       TabIndex        =   11
       Top             =   1560
       Width           =   1935
    End
    Begin VB.Label Label3 
-      Caption         =   "Nama MataKuliah"
-      Height          =   375
+      BackStyle       =   0  'Transparent
+      Caption         =   "NAMA MATAKULIAH"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   495
       Left            =   3360
       TabIndex        =   10
       Top             =   2160
       Width           =   1935
    End
    Begin VB.Label Label4 
+      BackStyle       =   0  'Transparent
       Caption         =   "SKS"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   255
       Left            =   3360
       TabIndex        =   9
-      Top             =   2760
+      Top             =   2880
       Width           =   1935
    End
 End
@@ -369,6 +428,14 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
+'Febrian Dwi Putra
+'hai diriku yang di masa depan
+'ada cerita untukmu
+'sekarang aku tak tahu arah tujuanku
+'semoga diriku dimasa depan hidup lebih baik dari pada diriku yang sekarang
+
+
 Private Sub Command1_Click()
 mati (True)
 Call control(True, True, True, False, False, True, True, True, True)
@@ -402,7 +469,7 @@ End If
 End Sub
 
 Private Sub Command3_Click()
-If Text1.Text = "" And Text2.Text = "" And Text3.Text = "" Then
+If Text1.Text = "" And Text2.Text = "" And Text3.Text = "" And Combo1 = "" Then
 MsgBox "error"
 Else
 db
@@ -452,18 +519,26 @@ End Sub
 Private Sub DataGrid1_Click()
 isi
 mati (False)
+hapus_list
 Call Form_Load
+End Sub
+
+Sub hapus_list()
+Combo1.Clear
+Combo1.Text = "Pilih Kode Dosen Pengajar"
 End Sub
 
 Private Sub DataGrid1_KeyDown(KeyCode As Integer, Shift As Integer)
 isi
 mati (False)
+hapus_list
 Call Form_Load
 End Sub
 
 Private Sub DataGrid1_KeyUp(KeyCode As Integer, Shift As Integer)
 isi
 mati (False)
+hapus_list
 Call Form_Load
 End Sub
 Private Sub Form_Load()
@@ -507,7 +582,9 @@ End Function
 
 Sub l()
     'INI LOAD DARI TABLE DOSEN DI KIRIM KE COMBO1 PADA INPUTAN TABLE MATAKULIAH
+    Adodc1.CommandType = adCmdUnknown
     Adodc1.RecordSource = "select * from dosen"
+    Adodc1.Refresh
     Do
         Combo1.AddItem Adodc1.Recordset.Fields("kode_dosen")
         Adodc1.Recordset.MoveNext
