@@ -1,24 +1,298 @@
 VERSION 5.00
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "msdatgrd.ocx"
+Object = "{49CBFCC0-1337-11D2-9BBF-00A024695830}#1.0#0"; "tinumb8.ocx"
+Object = "{E2D000D0-2DA1-11D2-B358-00104B59D73D}#1.0#0"; "titext8.ocx"
+Object = "{7FEC7313-D161-427C-A141-48E17931414B}#1.0#0"; "truedc8.ocx"
 Begin VB.Form Form1 
    BackColor       =   &H00808080&
    Caption         =   "ENTRY DATA DOSEN"
-   ClientHeight    =   7950
+   ClientHeight    =   10935
    ClientLeft      =   120
    ClientTop       =   465
    ClientWidth     =   15360
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
-   ScaleHeight     =   7950
+   ScaleHeight     =   10935
    ScaleWidth      =   15360
    WindowState     =   2  'Maximized
+   Begin TDBNumber6Ctl.TDBNumber Text3 
+      Height          =   375
+      Left            =   5760
+      TabIndex        =   13
+      Top             =   2880
+      Width           =   4335
+      _Version        =   65536
+      _ExtentX        =   7646
+      _ExtentY        =   661
+      Calculator      =   "Form1.frx":0000
+      Caption         =   "Form1.frx":0020
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      DropDown        =   "Form1.frx":008C
+      Keys            =   "Form1.frx":00AA
+      Spin            =   "Form1.frx":00F4
+      AlignHorizontal =   2
+      AlignVertical   =   0
+      Appearance      =   0
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      BtnPositioning  =   0
+      ClipMode        =   1
+      ClearAction     =   0
+      DecimalPoint    =   "."
+      DisplayFormat   =   "+62 ########;(########);+62 "
+      EditMode        =   0
+      Enabled         =   -1
+      ErrorBeep       =   0
+      ForeColor       =   -2147483640
+      Format          =   "+62 ###,###,######"
+      HighlightText   =   0
+      MarginBottom    =   1
+      MarginLeft      =   1
+      MarginRight     =   1
+      MarginTop       =   1
+      MaxValue        =   999999999999990
+      MinValue        =   -999999999999990
+      MousePointer    =   0
+      MoveOnLRKey     =   0
+      NegativeColor   =   255
+      OLEDragMode     =   0
+      OLEDropMode     =   0
+      ReadOnly        =   0
+      Separator       =   ","
+      ShowContextMenu =   1
+      ValueVT         =   1
+      Value           =   0
+      MaxValueVT      =   5
+      MinValueVT      =   5
+   End
+   Begin TDBText6Ctl.TDBText Text2 
+      Height          =   375
+      Left            =   5760
+      TabIndex        =   12
+      Top             =   2280
+      Width           =   4335
+      _Version        =   65536
+      _ExtentX        =   7646
+      _ExtentY        =   661
+      Caption         =   "Form1.frx":011C
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      DropDown        =   "Form1.frx":0188
+      Key             =   "Form1.frx":01A6
+      BackColor       =   -2147483643
+      EditMode        =   0
+      ForeColor       =   -2147483640
+      ReadOnly        =   0
+      ShowContextMenu =   -1
+      MarginLeft      =   1
+      MarginRight     =   1
+      MarginTop       =   1
+      MarginBottom    =   1
+      Enabled         =   -1
+      MousePointer    =   0
+      Appearance      =   0
+      BorderStyle     =   1
+      AlignHorizontal =   0
+      AlignVertical   =   0
+      MultiLine       =   0
+      ScrollBars      =   0
+      PasswordChar    =   ""
+      AllowSpace      =   -1
+      Format          =   ""
+      FormatMode      =   1
+      AutoConvert     =   -1
+      ErrorBeep       =   0
+      MaxLength       =   0
+      LengthAsByte    =   0
+      Text            =   ""
+      Furigana        =   0
+      HighlightText   =   0
+      IMEMode         =   0
+      IMEStatus       =   0
+      DropWndWidth    =   0
+      DropWndHeight   =   0
+      ScrollBarMode   =   0
+      MoveOnLRKey     =   0
+      OLEDragMode     =   0
+      OLEDropMode     =   0
+   End
+   Begin TDBText6Ctl.TDBText Text1 
+      Height          =   375
+      Left            =   5760
+      TabIndex        =   11
+      Top             =   1680
+      Width           =   4335
+      _Version        =   65536
+      _ExtentX        =   7646
+      _ExtentY        =   661
+      Caption         =   "Form1.frx":01EA
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      DropDown        =   "Form1.frx":0256
+      Key             =   "Form1.frx":0274
+      BackColor       =   -2147483643
+      EditMode        =   0
+      ForeColor       =   0
+      ReadOnly        =   0
+      ShowContextMenu =   -1
+      MarginLeft      =   1
+      MarginRight     =   1
+      MarginTop       =   1
+      MarginBottom    =   1
+      Enabled         =   -1
+      MousePointer    =   0
+      Appearance      =   0
+      BorderStyle     =   1
+      AlignHorizontal =   0
+      AlignVertical   =   0
+      MultiLine       =   0
+      ScrollBars      =   0
+      PasswordChar    =   ""
+      AllowSpace      =   -1
+      Format          =   ""
+      FormatMode      =   1
+      AutoConvert     =   -1
+      ErrorBeep       =   0
+      MaxLength       =   0
+      LengthAsByte    =   0
+      Text            =   ""
+      Furigana        =   0
+      HighlightText   =   0
+      IMEMode         =   0
+      IMEStatus       =   0
+      DropWndWidth    =   0
+      DropWndHeight   =   0
+      ScrollBarMode   =   0
+      MoveOnLRKey     =   0
+      OLEDragMode     =   0
+      OLEDropMode     =   0
+   End
+   Begin TrueData80Ctl.TData TData1 
+      Height          =   375
+      Left            =   3120
+      TabIndex        =   10
+      Top             =   4560
+      Width           =   2175
+      _ExtentX        =   3836
+      _ExtentY        =   661
+      Caption         =   "TData1"
+      BackColor       =   8421504
+      ForeColor       =   -2147483630
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Appearance      =   1
+      ErrorMsgCaption =   ""
+      Filtered        =   0   'False
+      DataMode        =   0
+      DataMember      =   ""
+      NameSubstitute  =   ""
+      ConnectionString=   "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=F:\DATA\Kuliah\tugasvb\dbakademik.mdb;Persist Security Info=False"
+      ConnectStringType=   1
+      OLEDBString     =   "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=F:\DATA\Kuliah\tugasvb\dbakademik.mdb;Persist Security Info=False"
+      OLEDBFile       =   ""
+      DataSourceName  =   ""
+      OtherAttributes =   ""
+      UserName        =   ""
+      Password        =   ""
+      CursorLocation  =   3
+      ConnectionTimeout=   15
+      CommandTimeout  =   30
+      RecordSource    =   "dosen"
+      CursorType      =   3
+      CommandType     =   2
+      MaxRecords      =   0
+      LinkType        =   0
+      Master          =   ""
+      CallDataRead    =   0   'False
+      ConvertNullToEmpty=   -1  'True
+      DesignConnection=   -1  'True
+      DesignTimeout   =   5
+      MousePointer    =   0
+      Enabled         =   -1  'True
+      BOFAction       =   0
+      EOFAction       =   0
+      QueryMode       =   0   'False
+      Orientation     =   0
+      ButtonFirst     =   -1  'True
+      ButtonNext      =   -1  'True
+      ButtonPage      =   0   'False
+      ButtonAdd       =   0   'False
+      ButtonDelete    =   0   'False
+      ButtonUpdate    =   0   'False
+      ButtonCancel    =   0   'False
+      ButtonBookmark  =   0   'False
+      ButtonFind      =   0   'False
+      ButtonQuery     =   0   'False
+      Tooltips        =   0   'False
+      PageSize        =   10
+      ConfirmDelete   =   -1  'True
+      ConfirmCancel   =   0   'False
+      LockType        =   3
+      CallDataWrite   =   0   'False
+      ConvertEmptyToNull=   -1  'True
+      ResyncAfterUpdate=   0   'False
+      ManualUpdate    =   0   'False
+      RefreshOnSrcChange=   -1  'True
+      CacheSize       =   50
+      Mode            =   0
+      ErrorMsgRestore =   -1  'True
+      AutoRefresh     =   2
+      AllowEarlyOpen  =   0   'False
+      SafeMode        =   0   'False
+      Virgin          =   -1  'True
+      Fields.Count    =   3
+      Fields(0).Name  =   "kode_dosen"
+      Fields(0).DisplayName=   "kode_dosen"
+      Fields(0).FieldKind=   0
+      Fields(0).DataSourceField=   "kode_dosen"
+      Fields(0).MaxLength=   10
+      Fields(1).Name  =   "nama_dosen"
+      Fields(1).DisplayName=   "nama_dosen"
+      Fields(1).FieldKind=   0
+      Fields(1).DataSourceField=   "nama_dosen"
+      Fields(1).MaxLength=   100
+      Fields(2).Name  =   "no_hp"
+      Fields(2).DisplayName=   "no_hp"
+      Fields(2).FieldKind=   0
+      Fields(2).DataSourceField=   "no_hp"
+      Fields(2).MaxLength=   20
+   End
    Begin MSDataGridLib.DataGrid DataGrid1 
-      Bindings        =   "Form1.frx":0000
+      Bindings        =   "Form1.frx":02B8
       Height          =   2895
       Left            =   3120
-      TabIndex        =   12
-      Top             =   4920
+      TabIndex        =   9
+      Top             =   5040
       Width           =   8415
       _ExtentX        =   14843
       _ExtentY        =   5106
@@ -131,7 +405,7 @@ Begin VB.Form Form1
       UserName        =   ""
       Password        =   ""
       RecordSource    =   "dosen"
-      Caption         =   "Adodc1"
+      Caption         =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -156,8 +430,8 @@ Begin VB.Form Form1
       EndProperty
       Height          =   615
       Left            =   5040
-      Picture         =   "Form1.frx":0015
-      TabIndex        =   11
+      Picture         =   "Form1.frx":02CD
+      TabIndex        =   8
       Top             =   3840
       Width           =   1095
    End
@@ -175,7 +449,7 @@ Begin VB.Form Form1
       Height          =   615
       Left            =   6120
       Style           =   1  'Graphical
-      TabIndex        =   10
+      TabIndex        =   7
       Top             =   3840
       Width           =   975
    End
@@ -192,7 +466,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   615
       Left            =   7080
-      TabIndex        =   9
+      TabIndex        =   6
       Top             =   3840
       Width           =   1095
    End
@@ -209,7 +483,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   615
       Left            =   8160
-      TabIndex        =   8
+      TabIndex        =   5
       Top             =   3840
       Width           =   975
    End
@@ -226,30 +500,9 @@ Begin VB.Form Form1
       EndProperty
       Height          =   615
       Left            =   9120
-      TabIndex        =   7
+      TabIndex        =   4
       Top             =   3840
       Width           =   975
-   End
-   Begin VB.TextBox Text3 
-      Height          =   405
-      Left            =   5760
-      TabIndex        =   3
-      Top             =   2880
-      Width           =   4335
-   End
-   Begin VB.TextBox Text2 
-      Height          =   405
-      Left            =   5760
-      TabIndex        =   2
-      Top             =   2280
-      Width           =   4335
-   End
-   Begin VB.TextBox Text1 
-      Height          =   405
-      Left            =   5760
-      TabIndex        =   1
-      Top             =   1680
-      Width           =   4335
    End
    Begin VB.Label Label4 
       BackStyle       =   0  'Transparent
@@ -266,7 +519,7 @@ Begin VB.Form Form1
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   3480
-      TabIndex        =   6
+      TabIndex        =   3
       Top             =   2880
       Width           =   1935
    End
@@ -285,7 +538,7 @@ Begin VB.Form Form1
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   3480
-      TabIndex        =   5
+      TabIndex        =   2
       Top             =   2280
       Width           =   1935
    End
@@ -306,7 +559,7 @@ Begin VB.Form Form1
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   3480
-      TabIndex        =   4
+      TabIndex        =   1
       Top             =   1680
       Width           =   1935
    End
@@ -354,7 +607,7 @@ If Text1 = "" And Text2 = "" And Text3 = "" Then
         Else
 db
 a
-With Adodc1.Recordset
+With TData1.Recordset
     !kode_dosen = Text1
     !nama_dosen = Text2
     !no_hp = Text3
@@ -368,16 +621,16 @@ End If
 End Sub
 
 Private Sub Command3_Click()
-If Text1.Text = "" And Text2.Text = "" And Text3.Text = "" Then
+If Text1.Text = "" And Text2.Text = "" And Text3.Value = "" Then
 MsgBox "error"
 Else
 db
 a
-Adodc1.Recordset.AddNew
-Adodc1.Recordset.Fields("kode_dosen") = Text1
-Adodc1.Recordset.Fields("nama_dosen") = Text2
-Adodc1.Recordset.Fields("no_hp") = Text3
-Adodc1.Recordset.Update
+TData1.Recordset.AddNew
+TData1.Recordset.Fields("kode_dosen") = Text1
+TData1.Recordset.Fields("nama_dosen") = Text2
+TData1.Recordset.Fields("no_hp") = Text3
+TData1.Recordset.Update
 MsgBox "Disimpan!", vbOKOnly, "Berhasil!"
         kosong
         Call control(False, False, False, True, True, False, True, True)
@@ -389,14 +642,14 @@ Private Sub Command4_Click()
 Dim hapus As String
 db
  a
-    If Adodc1.Recordset.RecordCount <> 0 Then
+    If TData1.Recordset.RecordCount <> 0 Then
         hapus = MsgBox("Yakin akan dihapus?", vbYesNo, "Peringatan...!")
         If hapus = vbYes Then
-            If Adodc1.Recordset.EOF Then
+            If TData1.Recordset.EOF Then
                 MsgBox "kosong"
             Else
-                Adodc1.Recordset.Delete
-                Adodc1.Recordset.MoveNext
+                TData1.Recordset.Delete
+                TData1.Recordset.MoveNext
                 Call Form_Load
                 End If
         End If
@@ -413,7 +666,7 @@ End Sub
 Sub kosong()
 Text1.Text = ""
 Text2.Text = ""
-Text3.Text = ""
+Text3.Value = ""
 End Sub
 
 Private Sub DataGrid1_Click()
@@ -443,13 +696,11 @@ mati (False)
 Call control(False, False, False, True, True, False, True, True)
 End Sub
 Sub isi()
-If Adodc1.Recordset.EOF Or Adodc1.Recordset.BOF Then
-Me.Show
-Else
-Text1.Text = Adodc1.Recordset.Fields("kode_dosen")
-Text2.Text = Adodc1.Recordset.Fields("nama_dosen")
-Text3.Text = Adodc1.Recordset.Fields("no_hp")
-End If
+On Error Resume Next
+Text1.Text = TData1.Recordset.Fields("kode_dosen")
+Text2.Text = TData1.Recordset.Fields("nama_dosen")
+Text3.Value = TData1.Recordset.Fields("no_hp")
+
 End Sub
 
 Sub mati(x)
